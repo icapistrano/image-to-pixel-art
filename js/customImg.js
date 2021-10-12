@@ -30,6 +30,7 @@ let imageSelected = false;
 
 saveImgBtn.addEventListener('click', () => {
     const canvasUrl = pixeledCanvas.toDataURL('png');
+    console.log(pixeledCanvas.width, pixeledCanvas.height);
     const a = document.createElement('a');
     a.href = canvasUrl;
     a.download = 'pixelated.png';
@@ -76,9 +77,8 @@ selectImgInput.addEventListener('change', (e) => {
             image.width = wantedSize * aspectRatioW;
             image.height = wantedSize * aspectRatioH;
         }
-
-        clientCanvas.style.width = pixeledCanvas.style.width = image.width + 'px';
-        clientCanvas.style.height = pixeledCanvas.style.height = image.height + 'px';
+        clientCanvas.width = pixeledCanvas.width = image.width ;
+        clientCanvas.height = pixeledCanvas.height = image.height ;
 
         ctx.drawImage(image, 0, 0, clientCanvas.width, clientCanvas.height);
     };
