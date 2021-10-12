@@ -30,7 +30,6 @@ let imageSelected = false;
 
 saveImgBtn.addEventListener('click', () => {
     const canvasUrl = pixeledCanvas.toDataURL('png');
-    console.log(pixeledCanvas.width, pixeledCanvas.height);
     const a = document.createElement('a');
     a.href = canvasUrl;
     a.download = 'pixelated.png';
