@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pixel art maker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body class="container-fluid">
+
+    <section class="inner-container mx-auto d-flex justify-content-center align-items-center text-center">
+        <div>
+            <h1 class="mb-2">pixel art maker</h1>
+            <h2 class="mb-4">convert your image into pixel art</h2>
+            <div class="post-card my-4 p-3">
+                <canvas id="landing-canvas" width="340" height="340" class="mb-3"></canvas>
+                <img id="dog-photo" src="assets/mochi.jpg" alt="dog photo" class="d-none">
+                <div id="landing-canvas-cover" class="p-3 mt-3 mx-3 canvas-cover">
+                    <h2 class="m-0">pixelating ... </h2>
+                </div>
+                <h3 class="mb-2">change my palette!</h3>
+                <div  class="container">
+                    <div class="row justify-content-center">
+                        <div class="col col-2 p-2">
+                            <input type="color" class="colour-node-header">
+                        </div>
+                        <div class="col col-2 p-2">
+                            <input type="color" class="colour-node-header">
+                        </div>
+                        <div class="col col-2 p-2">
+                            <input type="color" class="colour-node-header">
+                        </div>
+                        <div class="col col-2 p-2">
+                            <input type="color" class="colour-node-header">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col col-2 p-2">
+                            <input type="color" class="colour-node-header">
+                        </div>
+                        <div class="col col-2 p-2">
+                            <input type="color" class="colour-node-header">
+                        </div>
+                        <div class="col col-2 p-2">
+                            <input type="color" class="colour-node-header">
+                        </div>
+                        <div class="col col-2 p-2">
+                            <input type="color" class="colour-node-header">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="p-2">
+                <a href="#select-img-section">
+                    get started
+                </a>
+            </button>
+        </div>
+    </section>
+
+    <section id="select-img-section" class="inner-container mx-auto d-flex justify-content-center align-items-center">
+        <div>
+            <div class="post-card my-4 p-3">
+                <div class="d-flex justify-content-center">
+                    <canvas id="select-img-canvas" width="340" height="340" class="mb-3"></canvas>
+                </div>
+                <div id="select-img-canvas-cover" class="d-none p-3 mt-3 mx-3 canvas-cover">
+                    <h2 class="m-0">pixelating ... </h2>
+                </div>
+                <div class="container px-4">
+                    <div class="row mb-3 align-items-center">
+                        <label id="colour-input-label" for="colour-input" class="col p-0">colours: 3</label>
+                        <input id="colour-input" name="colour-input" type="range" min="1" max="24" class="col col-7" value="3">
+                    </div>
+                    <div class="row mb-3 align-items-center">
+                        <label id="pixel-input-label" for="pixel-input" class="col p-0 mt-1">pixel size: 10</label>
+                        <input id="pixel-input" type="range" min="1" max="100" class="col col-7" value="10">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <button id="select-img-btn" type="button" class="col p-2">select image</button>
+                    <input id="select-img-input" type="file" accept="image/png, image/gif, image/jpeg">
+                    <span class="col col-1"></span>
+                    <button id="pixelate-img-btn" type="button" class="col p-2">pixelate</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pixeled-img-section" class="d-none inner-container mx-auto d-flex justify-content-center align-items-center text-center">
+        <div>
+            <div class="post-card my-4 p-3">
+                <canvas id="pixeled-canvas" width="340" height="340" class="mb-3"></canvas>
+                <h3>colour palette</h3>
+                <div class="container px-4">
+                    <div id="client-colour-mod-container" class="row justify-content-center"></div>
+                </div>
+            </div>
+                <button id="save-btn" type="button" class="col p-2">save image </button>
+        </div>
+    </section>
+</body>
+
+<script type="module" src="js/onPageLoad.js"></script>
+<script type="module" src="js/customImg.js"></script>
+
+</html>

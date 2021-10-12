@@ -1,0 +1,160 @@
+:root {
+    --white:#ffffff;
+    --orange:#EDBC0B;
+    --postcard-bg-col:#F4F4F4;
+    --bg-col: #1B1B1B;
+    --canvas-cover: #808080;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url('../assets/Montserrat-Regular.ttf');
+}
+
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url('../assets/Montserrat-Bold.ttf');
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--orange);
+    display: inline-block;
+}
+
+#landing-canvas {
+    border: none;
+}
+
+.canvas-cover {
+    position: absolute;
+    background-color: var(--canvas-cover);
+    z-index: 1;
+    top: 0;
+    left: 0;
+    opacity: 0.75;
+}
+
+body {
+    background-color: var(--bg-col);
+    font-family: 'Montserrat';
+}
+
+.inner-container {
+    width: 50vw;
+    height: 100vh;
+    border-left: 1px white solid;
+    border-right: 1px white solid;
+}
+
+h1 {
+    font-family: Montserrat-Bold;
+    color: var(--white);
+    font-weight: bolder;
+    font-size: 36px;
+}
+
+h2 {
+    color: var(--white);
+    font-size: 18px;
+}
+
+h3, label {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+button {
+    background-color: var(--orange);
+    font-family: Montserrat-Bold;
+    font-size: 16px;
+    border: 2px var(--white) solid;
+    color: var(--white);
+    letter-spacing: 1px;
+}
+
+.post-card {
+    display: block;
+    background-color: var(--postcard-bg-col);
+    width: 375px;
+    position: relative;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+a, a:visited, a:hover, a:active {
+    color: inherit;
+}
+
+
+input[type="color"] {
+    --colour-mod-border: 1px;
+    width: 100%;
+    padding-top: calc(100% - (var(--colour-mod-border) * 2)); /* 1:1 Aspect Ratio */
+	-webkit-appearance: none;
+	border: none;
+}
+
+input[type="color"]:hover {
+    cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+}
+
+
+input[type=range] {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    height: 15px;
+    border-radius: 25px;
+    background: var(--orange);
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: var(--white);
+    border:2px solid var(--orange);
+    cursor: pointer; /* Cursor on hover */
+}
+
+
+@media only screen and (max-width:800px) {
+    .inner-container {
+        border: none;
+        width: 90vw;
+    }
+
+    .post-card {
+        min-width: 100%;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+
+    h2, h3, label {
+        font-size: 16px;
+    }
+  }
